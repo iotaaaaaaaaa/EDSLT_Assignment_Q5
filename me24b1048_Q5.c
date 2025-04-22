@@ -131,12 +131,10 @@ void add_overloaded(char *id) {
 	newnode = (struct sll*)malloc(sizeof(struct sll));
 	strcpy(newnode->drone_id, id);
 	newnode->next = NULL;
-	if (head == NULL) head = newnode;
+	if (head == NULL) head = temp1 =  newnode;
 	else {
-		temp1 = head;
-		while (temp1->next != NULL)
-			temp1 = temp1->next;
 		temp1->next = newnode;
+		temp1 = newnode;
 	}
 	printf("Added to overloaded list: %s\n", id);
 }
